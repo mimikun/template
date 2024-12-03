@@ -1,0 +1,7 @@
+#!/bin/bash
+# mise description="Remove some files"
+
+rm -f ./*.patch
+rm -f ./*.zip
+
+# vim:ft=bash

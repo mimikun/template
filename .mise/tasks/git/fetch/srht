@@ -1,0 +1,6 @@
+#!/bin/bash
+# mise description="git fetch srht"
+
+git fetch --prune --prune-tags --tags srht
+
+# vim:ft=bash

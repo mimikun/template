@@ -1,0 +1,14 @@
+#!/bin/bash
+# mise description="push to remote repository (srht)"
+# mise depends=["git:fetch:srht"]
+
+HOSTNAME=$(cat /etc/hostname)
+
+if [[ "$HOSTNAME" = "TanakaPC" ]]; then
+    echo "Work is not supported on this machine!!!"
+else
+    git push srht
+    git push srht --tags
+fi
+
+# vim:ft=bash

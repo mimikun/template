@@ -1,0 +1,14 @@
+#!/bin/bash
+# mise description="push to remote repository (origin)"
+# mise depends=["git:fetch:origin"]
+
+HOSTNAME=$(cat /etc/hostname)
+
+if [[ "$HOSTNAME" = "TanakaPC" ]]; then
+    echo "Work is not supported on this machine!!!"
+else
+    git push origin
+    git push origin --tags
+fi
+
+# vim:ft=bash

@@ -1,0 +1,6 @@
+#!/bin/bash
+# mise description="git fetch github"
+
+git fetch --prune --prune-tags --tags github
+
+# vim:ft=bash

@@ -1,0 +1,15 @@
+#!/bin/bash
+# mise description="Copy dailynote from local"
+
+TODAY=$(date "+%Y年%m月%d日")
+DAILYNOTE_FILE_NAME="$TODAY.md"
+DAILYNOTE_FILE_PATH="$obsidian_vault_root_path/001_DailyNotes/$DAILYNOTE_FILE_NAME"
+cp "$DAILYNOTE_FILE_PATH" .
+chmod -x "$DAILYNOTE_FILE_NAME"
+git add "$DAILYNOTE_FILE_NAME"
+
+# encrypt by using age
+#rage -e -r "$AGE_PUBKEY_HOME" "$DAILYNOTE_FILE_NAME" -o "$DAILYNOTE_FILE_NAME.age"
+#git add "$DAILYNOTE_FILE_NAME.age"
+
+git commit -nm "add $TODAY dailynotes"

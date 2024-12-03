@@ -1,0 +1,21 @@
+[env]
+PRODUCT_NAME = "mise-temp"
+
+[tasks.morning-routine]
+description = "workday morning routine"
+alias = "morning-routine"
+depends = [
+    "git:fetch:clean-fetch",
+    "git:branch:delete-patch-branch",
+    "git:pull",
+    "git:branch:create-patch-branch",
+]
+
+[tasks.lint]
+description = "Lint all"
+depends = ["lint:*"]
+
+[tasks.format]
+description = "Format all"
+alias = "fmt"
+depends = ["format:*"]

@@ -1,0 +1,19 @@
+#!/bin/bash
+# mise description="Update obsidian templates files"
+# mise alias=["update", "up"]
+# mise depends=["clean"]
+
+CURRENTDIR=$(pwd)
+# shellcheck disable=SC2154
+OBSIDIAN_VAULT_ROOT="$obsidian_vault_root_path"
+
+cd "$OBSIDIAN_VAULT_ROOT" || exit
+
+cp -r "$OBSIDIAN_VAULT_ROOT"/999_Templates "$CURRENTDIR"/
+cp -r "$OBSIDIAN_VAULT_ROOT"/holidays.md "$CURRENTDIR"/holidays.md
+cp -r "$OBSIDIAN_VAULT_ROOT"/tasks.md "$CURRENTDIR"/tasks.md
+cp -r "$OBSIDIAN_VAULT_ROOT"/電子レンジ対応表.md "$CURRENTDIR"/電子レンジ対応表.md
+
+cd "$CURRENTDIR" || exit
+
+# vim:ft=bash

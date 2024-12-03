@@ -1,0 +1,15 @@
+#!/bin/bash
+# mise description="View remote repository"
+
+BASE_NAME=$(basename "$(pwd)")
+REPO_NAME=${PRODUCT_NAME:-$BASE_NAME}
+CODEBERG_URL="https://codeberg.org/mimikun/${REPO_NAME}"
+
+HOSTNAME=$(cat /etc/hostname)
+if [[ "$HOSTNAME" = "azusa" ]]; then
+    open "$CODEBERG_URL"
+else
+    wsl-open "$CODEBERG_URL"
+fi
+
+# vim:ft=bash

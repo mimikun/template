@@ -1,0 +1,14 @@
+#!/bin/bash
+# mise description="push to remote repository (gitea)"
+# mise depends=["git:fetch:gitea"]
+
+HOSTNAME=$(cat /etc/hostname)
+
+if [[ "$HOSTNAME" = "TanakaPC" ]]; then
+    echo "Work is not supported on this machine!!!"
+else
+    git push gitea
+    git push gitea --tags
+fi
+
+# vim:ft=bash

@@ -1,0 +1,14 @@
+#!/bin/bash
+# mise description="push to remote repository (github)"
+# mise depends=["git:fetch:github"]
+
+HOSTNAME=$(cat /etc/hostname)
+
+if [[ "$HOSTNAME" = "TanakaPC" ]]; then
+    echo "Work is not supported on this machine!!!"
+else
+    git push github
+    git push github --tags
+fi
+
+# vim:ft=bash

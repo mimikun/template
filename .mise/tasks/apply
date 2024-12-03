@@ -1,0 +1,17 @@
+#!/bin/bash
+# mise description="Apply obsidian templates files"
+
+CURRENTDIR=$(pwd)
+# shellcheck disable=SC2154
+OBSIDIAN_VAULT_ROOT="$obsidian/../"
+
+cd "$OBSIDIAN_VAULT_ROOT" || exit
+
+cp "$CURRENTDIR"/999_Templates/* "$OBSIDIAN_VAULT_ROOT"/999_Templates/
+cp "$CURRENTDIR"/holidays.md "$OBSIDIAN_VAULT_ROOT"/holidays.md
+cp "$CURRENTDIR"/tasks.md "$OBSIDIAN_VAULT_ROOT"/tasks.md
+cp "$CURRENTDIR"/電子レンジ対応表.md "$OBSIDIAN_VAULT_ROOT"/電子レンジ対応表.md
+
+cd "$CURRENTDIR" || exit
+
+# vim:ft=bash

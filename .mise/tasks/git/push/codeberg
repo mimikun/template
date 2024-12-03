@@ -1,0 +1,14 @@
+#!/bin/bash
+# mise description="push to remote repository (codeberg)"
+# mise depends=["git:fetch:codeberg"]
+
+HOSTNAME=$(cat /etc/hostname)
+
+if [[ "$HOSTNAME" = "TanakaPC" ]]; then
+    echo "Work is not supported on this machine!!!"
+else
+    git push codeberg
+    git push codeberg --tags
+fi
+
+# vim:ft=bash
